@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import aire1 from '../../images/aire-sinfondo.png';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,7 +10,8 @@ const Hero = () => {
       title: "Tecnología Inverter",
       subtitle: "Ahorro de energía hasta 40%",
       description: "Los sistemas inverter ajustan automáticamente la potencia para mantener la temperatura ideal y reducir el consumo.",
-      image: "🏠",
+      image: aire1, // Esta es la imagen importada
+      imageType: 'image', // Tipo de imagen
       bgGradient: "linear-gradient(135deg, #0077b6, #00b4d8)",
       buttonText: "Ver Tecnología Inverter"
     },
@@ -19,6 +21,7 @@ const Hero = () => {
       subtitle: "BTUs desde 9,000 hasta 24,000",
       description: "Perfectos para hogares y oficinas. Instalación profesional incluida con garantía de 2 años.",
       image: "❄️",
+      imageType: 'emoji', // Tipo emoji
       bgGradient: "linear-gradient(135deg, #00b4d8, #0077b6)",
       buttonText: "Ver Split"
     },
@@ -28,6 +31,7 @@ const Hero = () => {
       subtitle: "Para espacios comerciales",
       description: "Solución completa para negocios, restaurantes y edificios con múltiples zonas de climatización.",
       image: "🏢",
+      imageType: 'emoji',
       bgGradient: "linear-gradient(135deg, #0096c7, #48cae4)",
       buttonText: "Sistemas Comerciales"
     },
@@ -37,6 +41,7 @@ const Hero = () => {
       subtitle: "Control desde tu smartphone",
       description: "Conecta tu aire acondicionado a tu teléfono y controla la temperatura desde cualquier lugar.",
       image: "📱",
+      imageType: 'emoji',
       bgGradient: "linear-gradient(135deg, #48cae4, #0077b6)",
       buttonText: "Aires Inteligentes"
     }
@@ -57,6 +62,23 @@ const Hero = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  // Función para renderizar el contenido de la imagen
+  const renderImageContent = (slide) => {
+    if (slide.imageType === 'image') {
+      return (
+        <img 
+          src={slide.image} 
+          alt={slide.title}
+          className="product-real-image"
+        />
+      );
+    } else {
+      return (
+        <div className="product-emoji">{slide.image}</div>
+      );
+    }
   };
 
   return (
@@ -82,7 +104,7 @@ const Hero = () => {
               </div>
               <div className="image-content">
                 <div className="product-image">
-                  <div className="product-emoji">{slides[currentSlide].image}</div>
+                  {renderImageContent(slides[currentSlide])}
                   <div className="product-badge">Nuevo</div>
                 </div>
               </div>

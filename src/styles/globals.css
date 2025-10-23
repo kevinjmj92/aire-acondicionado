@@ -772,3 +772,61 @@ body {
     min-height: 44px;
   }
 }
+
+/* Estilos para imágenes reales en el carousel */
+.product-real-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* Asegurar que el contenedor de la imagen mantenga las proporciones */
+.product-image {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Importante para que la imagen no se salga */
+}
+
+.product-image:hover {
+  transform: translateY(-5px);
+}
+
+/* Ajustes responsive para la imagen real */
+@media (max-width: 1200px) {
+  .product-image {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-image {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    width: 220px;
+    height: 220px;
+  }
+}
