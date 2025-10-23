@@ -4,6 +4,7 @@ import Hero from './components/landing/Hero';
 import Features from './components/landing/Features';
 import ProductShowcase from './components/landing/ProductShowcase';
 import Footer from './components/landing/Footer';
+import ChatWidget from './components/ChatWidget'; // 👈 Agrega esta línea
 import './styles/globals.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Features />
       <ProductShowcase />
       <Footer />
+      <ChatWidget /> {/* 👈 Agrega esta línea */}
     </div>
   );
 }

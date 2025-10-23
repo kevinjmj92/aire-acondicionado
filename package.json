@@ -1,5 +1,6 @@
 {
   "name": "aire-acondicionado",
+  "homepage": "/webs/aire-acondicionado",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
