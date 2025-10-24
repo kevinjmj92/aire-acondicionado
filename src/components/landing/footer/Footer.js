@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // 👈 Importar Link
 
 const Footer = () => {
   return (
@@ -21,6 +22,8 @@ const Footer = () => {
             <a href="#servicios">Servicios</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">Contacto</a>
+            {/* 👇 Cambiar a Link para navegación suave */}
+            <Link to="/login">Administradores</Link>
           </div>
         </div>
         <div className="footer-bottom">

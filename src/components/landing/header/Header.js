@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // 👈 Importar Link
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,15 @@ const Header = () => {
           <a href="#productos" onClick={closeMenu}>Productos</a>
           <a href="#nosotros" onClick={closeMenu}>Nosotros</a>
           <a href="#contacto" onClick={closeMenu}>Contacto</a>
-          <button className="btn-primary" onClick={closeMenu}>Tienda</button>
+          {/* 👇 NUEVO: Icono de carrito que redirige al login */}
+          <Link 
+            to="/" 
+            className="cart-icon" 
+            onClick={closeMenu}
+            aria-label="Ir a la tienda"
+          >
+            🛒
+          </Link>
         </nav>
 
         {/* Overlay para cerrar el menú al hacer clic fuera */}
