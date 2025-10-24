@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import aire1 from '../../images/aire-sinfondo.png';
+import aire1 from '../../../images/aire-sinfondo.png';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
