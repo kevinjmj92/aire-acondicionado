@@ -1,0 +1,308 @@
+/* ProductShowcase.css */
+.product-showcase {
+  position: relative;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 600px;
+}
+
+.carousel-container {
+  position: relative;
+  padding: 2rem 0 4rem 0;
+}
+
+/* ===== ELIMINAR COMPLETAMENTE TODOS LOS CONTROLES ===== */
+.product-showcase .react-multi-carousel-arrow {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Eliminar también cualquier contenedor de flechas */
+.product-showcase [class*="arrow"] {
+  display: none !important;
+}
+
+/* ===== ELIMINAR PUNTOS DEL CAROUSEL ===== */
+.product-showcase .react-multi-carousel-dot-list {
+  display: none !important;
+}
+
+/* ===== MEJORAR LA EXPERIENCIA SWIPE ===== */
+.carousel-container {
+  cursor: grab;
+  padding: 2rem 0;
+}
+
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+/* Tarjetas de producto */
+.product-card {
+  background: white;
+  margin: 0 10px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  user-select: none;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.product-image-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  background: #f8f9fa;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Badge de descuento */
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #ff4444, #ff6b6b);
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+  z-index: 5;
+  min-width: 50px;
+  text-align: center;
+}
+
+.product-info {
+  flex: 0 0 auto;
+}
+
+.brand-name {
+  color: #2c5aa0;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* CORREGIDO: Limitación de líneas sin warnings */
+.product-name {
+  color: #495057;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* Propiedades estándar para compatibilidad futura */
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+}
+
+.price-container {
+  margin: 1rem 0;
+}
+
+.current-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2c5aa0;
+  display: block;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.offer-button {
+  background: linear-gradient(135deg, #2c5aa0, #3a6bc0);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.offer-button:hover {
+  background: linear-gradient(135deg, #1e4a8f, #2c5aa0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c5aa0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #2c5aa0, #3a6bc0);
+  border-radius: 2px;
+}
+
+/* ===== BOTÓN "IR A TIENDA" ===== */
+.store-button-container {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e9ecef;
+}
+
+.store-button {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.store-button:hover {
+  background: linear-gradient(135deg, #218838, #1e9c7a);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.store-button:active {
+  transform: translateY(-1px);
+}
+
+/* Indicador de swipe para móviles */
+.swipe-hint {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  display: none;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.swipe-hint::before {
+  content: "💡 Desliza para ver más productos";
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-showcase {
+    padding: 2rem 0;
+    min-height: 500px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .product-card {
+    height: 380px;
+    margin: 0 8px;
+    padding: 1rem;
+  }
+  
+  .swipe-hint {
+    display: block;
+  }
+  
+  .discount-badge {
+    top: 8px;
+    right: 8px;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .store-button {
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+    width: 90%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-showcase {
+    min-height: 450px;
+  }
+  
+  .product-card {
+    height: 360px;
+  }
+  
+  .product-name {
+    font-size: 0.9rem;
+    height: 36px;
+  }
+  
+  .store-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Asegurar que no haya ningún control visible */
+.product-showcase button[class*="arrow"],
+.product-showcase [class*="control"],
+.product-showcase [class*="nav"] {
+  display: none !important;
+}

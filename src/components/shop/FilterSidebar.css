@@ -1,0 +1,196 @@
+/* FilterSidebar.css - Estilo Moderno */
+.filter-sidebar-modern {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.filter-header-modern {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.filter-header-modern h3 {
+  color: #2c5aa0;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-count {
+  background: #e3f2fd;
+  color: #2c5aa0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.clear-filters-modern {
+  background: transparent;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clear-filters-modern:hover {
+  background: #6c757d;
+  color: white;
+}
+
+.filter-group-modern {
+  margin-bottom: 0.5rem;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filter-section-header-modern {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.filter-section-header-modern:hover {
+  background: #e9ecef;
+}
+
+.filter-section-header-modern h4 {
+  color: #495057;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.arrow {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.filter-options-modern {
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e9ecef;
+}
+
+.filter-option-modern {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  border-radius: 6px;
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+
+.filter-option-modern:hover {
+  background: #f8f9fa;
+}
+
+.filter-option-modern input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.filter-option-modern .checkmark {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid #dee2e6;
+  border-radius: 3px;
+  margin-right: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.filter-option-modern input:checked ~ .checkmark {
+  background-color: #2c5aa0;
+  border-color: #2c5aa0;
+}
+
+.filter-option-modern .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filter-option-modern input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.filter-option-modern.checkbox .checkmark {
+  border-radius: 3px;
+}
+
+.filter-option-modern.radio .checkmark {
+  border-radius: 50%;
+}
+
+.filter-option-modern.radio .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+}
+
+.filter-option-modern span:last-child {
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.filter-option-modern:hover span:last-child {
+  color: #2c5aa0;
+}
+
+.filter-option-modern input:checked ~ span:last-child {
+  color: #2c5aa0;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-sidebar-modern {
+    position: static;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-actions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
